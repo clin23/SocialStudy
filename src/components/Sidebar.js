@@ -14,6 +14,7 @@ import {
   X as CloseIcon,
 } from "lucide-react";
 import AppLogo from "./AppLogo";
+import PropTypes from "prop-types";
 
 const Sidebar = ({
   isOpen,
@@ -113,6 +114,18 @@ const Sidebar = ({
       )}
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggleSidebarDesktop: PropTypes.func.isRequired,
+  currentUser: PropTypes.shape({
+    photoURL: PropTypes.string,
+    displayName: PropTypes.string,
+  }),
+  handleLogout: PropTypes.func.isRequired,
+  activeTab: PropTypes.string.isRequired,
+  setActiveTab: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
