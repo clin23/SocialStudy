@@ -28,6 +28,4 @@ const collections = {
   groups: "groups",
 };
 
-console.log("Firebase Auth:", auth);
-
 export { app, auth, db, analytics, collections };
