@@ -4,6 +4,7 @@ import { db } from "../firebase/firebaseConfig";
 import { getUsersPath } from "../firebase/paths";
 import { collection, onSnapshot } from "firebase/firestore";
 import { Search, UserPlus } from "lucide-react";
+import PropTypes from "prop-types";
 
 const Users = ({ currentUser }) => {
   const [users, setUsers] = useState([]);
@@ -116,6 +117,13 @@ const Users = ({ currentUser }) => {
       </div>
     </div>
   );
+};
+
+Users.propTypes = {
+  currentUser: PropTypes.shape({
+    uid: PropTypes.string,
+    // add other properties if needed
+  }),
 };
 
 export default Users;
