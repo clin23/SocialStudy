@@ -23,7 +23,7 @@ const AuthComponent = () => {
   const [username, setUsername] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const auth = getAuth();
 
   const handleSubmit = async (e) => {
