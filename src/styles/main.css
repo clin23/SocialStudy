@@ -1,0 +1,234 @@
+:root {
+  /* Color Variables */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+
+  /* Spacing Variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Font Variables */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--dark-color);
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: var(--spacing-xs);
+}
+.mt-2 {
+  margin-top: var(--spacing-sm);
+}
+.mt-3 {
+  margin-top: var(--spacing-md);
+}
+.mt-4 {
+  margin-top: var(--spacing-lg);
+}
+.mt-5 {
+  margin-top: var(--spacing-xl);
+}
+
+/* Layout Components */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content.sidebar-open {
+  margin-left: 12rem;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 5rem;
+}
+
+.content-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  background-color: var(--dark-color);
+}
+
+/* Auth Styles */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+}
+
+.auth-box {
+  background-color: var(--light-color);
+  padding: var(--spacing-xl);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--dark-color);
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+}
+
+.auth-button {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+}
+
+.auth-button:hover {
+  background-color: var(--primary-color);
+  opacity: 0.9;
+}
+
+.switch-auth-mode {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-top: var(--spacing-md);
+  text-decoration: underline;
+}
+
+.error-message {
+  color: var(--danger-color);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: 4px;
+}
+
+/* Error Boundary */
+.error-boundary {
+  padding: var(--spacing-lg);
+  text-align: center;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border-radius: 4px;
+  margin: var(--spacing-lg);
+}
+
+.error-boundary h2 {
+  color: var(--danger-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.error-boundary details {
+  margin: var(--spacing-md) 0;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+}
+
+.error-boundary summary {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content.sidebar-open,
+  .main-content.sidebar-closed {
+    margin-left: 0;
+  }
+
+  .content-area {
+    padding: var(--spacing-md);
+  }
+
+  .auth-box {
+    margin: var(--spacing-md);
+  }
+}
