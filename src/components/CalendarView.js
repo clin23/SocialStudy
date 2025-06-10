@@ -5,6 +5,7 @@ import { getUserTodosPath } from "../firebase/paths";
 import { collection, onSnapshot, addDoc, Timestamp } from "firebase/firestore";
 import { PlusCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import Modal from "./Modal";
+import PropTypes from "prop-types";
 
 const CalendarView = ({ currentUser, setActiveTab, setInitialSessionData }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -262,6 +263,15 @@ const CalendarView = ({ currentUser, setActiveTab, setInitialSessionData }) => {
       </Modal>
     </div>
   );
+};
+
+CalendarView.propTypes = {
+  currentUser: PropTypes.shape({
+    uid: PropTypes.string,
+    // add other properties if needed
+  }),
+  setActiveTab: PropTypes.func,
+  setInitialSessionData: PropTypes.func,
 };
 
 export default CalendarView;

@@ -1086,7 +1086,7 @@ const RecordSession = ({
 };
 
 RecordSession.propTypes = {
-  currentUser: PropTypes.object.isRequired,
+  currentUser: PropTypes.object,
   setActiveTab: PropTypes.func,
   initialSessionData: PropTypes.object,
   setInitialSessionData: PropTypes.func,

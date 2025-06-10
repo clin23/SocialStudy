@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Bell, User } from "lucide-react";
+import { Menu } from "lucide-react";
 import AppLogo from "./AppLogo";
 import PropTypes from "prop-types";
 

@@ -10,8 +10,6 @@ import {
   LogOut,
   ChevronsLeft,
   ChevronsRight,
-  Menu,
-  X as CloseIcon,
 } from "lucide-react";
 import AppLogo from "./AppLogo";
 import PropTypes from "prop-types";

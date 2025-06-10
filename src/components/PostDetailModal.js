@@ -3,14 +3,11 @@ import {
   ThumbsUp,
   MessageSquare,
   MoreVertical,
-  XCircle,
-  Maximize2,
   Zap,
   Star,
   Clock,
   Image as ImageIcon,
   Video as VideoIcon,
-  Paperclip,
   Send,
 } from "lucide-react";
 import Modal from "./Modal";

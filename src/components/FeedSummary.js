@@ -10,7 +10,7 @@ import {
   onSnapshot,
   Timestamp,
 } from "firebase/firestore";
-import { formatDurationInMinutes } from "../utils/formatters";
+import PropTypes from "prop-types";
 
 const FeedSummary = ({ currentUser }) => {
   const [weeklySessionsCount, setWeeklySessionsCount] = useState(0);
@@ -104,6 +104,13 @@ const FeedSummary = ({ currentUser }) => {
       </div>
     </div>
   );
+};
+
+FeedSummary.propTypes = {
+  currentUser: PropTypes.shape({
+    uid: PropTypes.string,
+    // add other properties if needed
+  }),
 };
 
 export default FeedSummary;

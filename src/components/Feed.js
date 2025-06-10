@@ -141,6 +141,9 @@ const Feed = ({
 
 Feed.propTypes = {
   currentUser: PropTypes.object,
+  onLike: PropTypes.func,
+  onCommentSubmit: PropTypes.func,
+  onFollowToggle: PropTypes.func,
   onOpenPostModal: PropTypes.func,
   setActiveTab: PropTypes.func,
   setInitialSessionData: PropTypes.func,

@@ -3,14 +3,7 @@ import Spinner from "./Spinner";
 import { db } from "../firebase/firebaseConfig";
 import { getUsersPath, getStudySessionsPath } from "../firebase/paths";
 import { doc, collection, query, where, onSnapshot } from "firebase/firestore";
-import {
-  BookOpen,
-  ListChecks,
-  CalendarDays,
-  Brain,
-  Star,
-  Clock,
-} from "lucide-react";
+import { Star } from "lucide-react";
 import { formatDuration } from "../utils/formatters";
 import PropTypes from "prop-types";
 
@@ -159,7 +152,8 @@ const Profile = ({ currentUser }) => {
 };
 
 Profile.propTypes = {
-  currentUser: PropTypes.object.isRequired,
+  currentUser: PropTypes.object,
+  setActiveTab: PropTypes.func,
 };
 
 export default Profile;

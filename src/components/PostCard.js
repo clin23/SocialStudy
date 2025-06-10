@@ -86,9 +86,9 @@ const PostCard = ({ session, currentUser, onOpenPostModal }) => {
 };
 
 PostCard.propTypes = {
-  session: PropTypes.object.isRequired,
   currentUser: PropTypes.object,
-  onOpenPostModal: PropTypes.func,
+  session: PropTypes.object.isRequired,
+  onOpenPostModal: PropTypes.func.isRequired,
 };
 
 export default PostCard;
